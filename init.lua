@@ -79,6 +79,38 @@ require("lazy").setup({
     { 
 		"jose-elias-alvarez/typescript.nvim",
         lazy = true,
+    },
+    {
+        "nvimdev/guard.nvim",
+        event = "BufReadPre",
+        dependencies = {
+            "nvimdev/guard-collection",
+        },
+        config = function()
+            local ft = require("guard.filetype")
+
+            ft("c,cpp,json"):fmt("clang-format")
+
+            require("guard").setup({
+                -- the only options for the setup function
+                fmt_on_save = true,
+                -- Use lsp if no formatter was defined for this filetype
+                lsp_as_default_formatter = false,
+            })
+        end,
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
+
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {},
     }
 })
 
