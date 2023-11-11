@@ -5,6 +5,7 @@ local ts = require("typescript")
 local on_attach = function(client, buffer)
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
+    local keymap = vim.keymap
 
 	-- set keybinds
 	keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
@@ -37,4 +38,12 @@ ts.setup({
         on_attach = on_attach
     }
 })
-
+lspconfig.clangd.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = {
+        "clangd",
+        '--query-driver="/usr/bin/g++-11"'
+    },
+    filetypes = {"c", "cpp", "objc", "objcpp", "hpp"},
+})
