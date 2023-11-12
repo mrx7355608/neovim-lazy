@@ -111,7 +111,8 @@ require("lazy").setup({
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
-    }
+    },
+    { "nvim-lualine/lualine.nvim" }
 })
 
 require("core.options")
@@ -123,3 +124,4 @@ require("plugins.lsp")
 require("plugins.mason")
 require("plugins.lspsaga")
 require("plugins.cmp")
+require("plugins.lualine")
