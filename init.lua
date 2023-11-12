@@ -112,7 +112,12 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
     },
-    { "nvim-lualine/lualine.nvim" }
+    { "nvim-lualine/lualine.nvim" },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    }
 })
 
 require("core.options")
