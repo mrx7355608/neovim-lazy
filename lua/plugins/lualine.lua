@@ -1,3 +1,3 @@
 require("lualine").setup({
-    opts = { colorscheme = "onedark" }
+    opts = { colorscheme = "purpura" }
 })

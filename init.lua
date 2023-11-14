@@ -112,12 +112,26 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
     },
+
     { "nvim-lualine/lualine.nvim" },
+
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         opts = {} -- this is equalent to setup({}) function
-    }
+    },
+    -- maximizes and restores current window
+    { "szw/vim-maximizer" },
+    -- comment utility (gc, gcc)
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
+    },
+    -- vim surround
+    { "tpope/vim-surround" }
 })
 
 require("core.options")
