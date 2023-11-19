@@ -131,7 +131,8 @@ require("lazy").setup({
         lazy = false,
     },
     -- vim surround
-    { "tpope/vim-surround" }
+    { "tpope/vim-surround" },
+    { "christoomey/vim-tmux-navigator"}
 })
 
 require("core.options")

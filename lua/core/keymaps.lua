@@ -37,3 +37,8 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- Vim tmux navigator
+keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>")
+keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
+keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>")
+keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
