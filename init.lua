@@ -135,6 +135,15 @@ require("lazy").setup({
 	},
 	-- vim surround
 	{ "tpope/vim-surround" },
+	-- vim fugitive for git stuff
+	{ "tpope/vim-fugitive" },
+	-- git signs
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
 	{ "christoomey/vim-tmux-navigator" },
 	{
 		"iamcco/markdown-preview.nvim",

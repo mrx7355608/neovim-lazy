@@ -5,7 +5,9 @@ local keymap = vim.keymap
 
 -- Editor
 keymap.set("i", "jj", "<Esc>")
-keymap.set({"n", "i" }, "<C-s>", function() vim.cmd(":w") end)
+keymap.set({ "n", "i" }, "<C-s>", function()
+	vim.cmd(":w")
+end)
 -- Splitting panes
 keymap.set("n", "<leader>sv", "<C-w>v")
 keymap.set("n", "<leader>sh", "<C-w>s")
@@ -32,13 +34,19 @@ end)
 keymap.set("n", "<leader>e", ":Neotree filesystem toggle float<CR>")
 keymap.set("n", "<leader>gs", ":Neotree git_status reveal right<CR>")
 -- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 -- Vim tmux navigator
 keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>")
 keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
 keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>")
 keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
+
+-- vim fugitive bindings
+keymap.set("n", "<leader>og", vim.cmd.Git)
+keymap.set("n", "<leader>gp", function()
+	vim.cmd.Git("push")
+end)
