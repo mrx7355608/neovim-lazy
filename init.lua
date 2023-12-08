@@ -91,7 +91,7 @@ require("lazy").setup({
 			local ft = require("guard.filetype")
 
 			ft("c,cpp"):fmt("clang-format")
-			ft("js,jsx,ts,tsx"):fmt("prettier"):lint("eslint_d")
+			ft("javascript,typescript,typescriptreact,javascriptreact"):fmt("prettier"):lint("eslint_d")
 			ft("lua"):fmt("stylua")
 
 			require("guard").setup({
