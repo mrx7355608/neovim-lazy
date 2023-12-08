@@ -12,13 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- Theme
+	-- Themes
 	{
 		"navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
 	},
-
+	{ "sekke276/dark_flat.nvim" },
 	-- if some code requires a module from an unloaded plugin, it will be automatically loaded.
 	-- So for api plugins like devicons, we can always set lazy=true
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
@@ -154,6 +154,7 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 })
 
 require("core.options")
@@ -167,3 +168,4 @@ require("plugins.lspsaga")
 require("plugins.cmp")
 require("plugins.lualine")
 require("plugins.luasnip")
+require("plugins.ibl")
