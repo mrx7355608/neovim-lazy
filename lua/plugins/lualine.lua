@@ -1,3 +1,5 @@
 require("lualine").setup({
-	opts = { colorscheme = "dark_flat" },
+	options = {
+		theme = "monokai-pro",
+	},
 })

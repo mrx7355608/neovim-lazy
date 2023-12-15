@@ -1,6 +1,8 @@
-require("dark_flat").setup({
-	transparent = true,
-	italics = true,
+require("monokai-pro").setup({
+	transparent_background = true,
+	devicons = true,
+	terminal_colors = true,
+	filter = "spectrum",
 })
 
-vim.cmd.colorscheme("dark_flat")
+vim.cmd.colorscheme("monokai-pro")

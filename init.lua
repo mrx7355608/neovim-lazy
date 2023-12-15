@@ -14,11 +14,23 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- Themes
 	{
-		"navarasu/onedark.nvim",
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup()
+		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"yeddaif/neovim-purple",
 		lazy = false,
 		priority = 1000,
 	},
-	{ "sekke276/dark_flat.nvim" },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- if some code requires a module from an unloaded plugin, it will be automatically loaded.
 	-- So for api plugins like devicons, we can always set lazy=true
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
