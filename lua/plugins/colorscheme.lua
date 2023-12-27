@@ -1,8 +1,16 @@
-require("monokai-pro").setup({
-	transparent_background = true,
-	devicons = true,
-	terminal_colors = true,
-	filter = "spectrum",
+require("ayu").setup({
+	mirage = false,
+	overrides = {
+		Normal = { bg = "None" },
+		ColorColumn = { bg = "None" },
+		SignColumn = { bg = "None" },
+		Folded = { bg = "None" },
+		FoldColumn = { bg = "None" },
+		CursorLine = { bg = "None" },
+		CursorColumn = { bg = "None" },
+		WhichKeyFloat = { bg = "None" },
+		VertSplit = { bg = "None" },
+	},
 })
 
-vim.cmd.colorscheme("monokai-pro")
+vim.cmd.colorscheme("ayu")
