@@ -92,7 +92,7 @@ require("lazy").setup({
 			local ft = require("guard.filetype")
 
 			ft("c,cpp"):fmt("clang-format")
-			ft("javascript,typescript,typescriptreact,javascriptreact"):fmt("prettier"):lint("eslint_d")
+			ft("javascript,typescript,typescriptreact,javascriptreact,html,css"):fmt("prettier"):lint("eslint_d")
 			ft("lua"):fmt("stylua")
 
 			require("guard").setup({
@@ -155,7 +155,7 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 })
 
 require("core.options")

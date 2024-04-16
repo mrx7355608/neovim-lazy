@@ -32,8 +32,8 @@ end
 -- used to enable auto-completion
 local capabilities = nvim_cmp_lsp.default_capabilities()
 -- for html
-local htmlCapabilities = vim.lsp.protocol.make_client_capabilities()
-htmlCapabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 ts.setup({
 	server = {
@@ -50,7 +50,14 @@ lspconfig.clangd.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-lspconfig["html"].setup({
-	capabilities = htmlCapabilities,
+lspconfig.emmet_ls.setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
+})
+lspconfig["html"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+lspconfig.emmet_language_server.setup({
+  filetypes = { "css", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "handlebars" },
 })

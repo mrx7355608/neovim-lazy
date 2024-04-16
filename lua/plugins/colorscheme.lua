@@ -1,1 +1,4 @@
-vim.cmd.colorscheme("catppuccin-mocha")
+require("tokyonight").setup({
+    use_background= "dark",
+})
+vim.cmd.colorscheme("tokyonight-moon")
